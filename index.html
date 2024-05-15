@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine Learning Dashboard</title>
+<link rel="stylesheet" href="index.css">
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header> 
+   <h1> Machine Learning Algorithm Visualiser</h1>
+</header>
+
+<div class="container">
+    <div class="column column1" id="resourcesColumn">
+        <h2>Explanation through Google Generative AI</h2>
+        <!-- Resources content will be loaded here -->
+        <!-- Google Generative AI Section -->
+        <h1></h1>
+        <div class="input-container">
+            <label for="prompt">Enter your query:</label>
+            <input type="text" id="prompt" name="prompt" />
+            <button onclick="generateText()">Generate</button>
+        </div>
+        <div class="content" id="generated-text"></div>
+    </div>
+
+    <div class="column column2" id="modelsColumn">
+        <div class="container">
+            <div class="column21" id="withDataset">
+                
+                    <h2>Upload Your Dataset</h2>
+                    <div id="drop-area">
+                        <input type="file" id="fileElem" multiple accept=".csv,.txt,.arff">
+                        <label for="fileElem">Upload Files</label>
+                        <span class="file-types">(CSV, TXT, ARFF)</span>
+                        <p id="file-name">No file uploaded Drag &amp; Drop files here or click to upload</p> <!-- Display uploaded file name -->
+                       
+                    </div>
+                
+                <div id="visualizationWithDataset">
+                    <ul id="models">
+                        <li><button onclick="linearRegression()">Linear Regression</button></li>
+                        <li><button onclick="knn()">KNN</button></li>
+                        <li><button onclick="decisionTree()">Decision Tree</button></li>
+                        <li><button onclick="linearRegressionNoData()">Interactive Linear Regression</button>
+                            <iframe id="urlFrame" style="width:400px; height:300px; display:none;"></iframe>
+                        </li>
+                    
+                        <li><button onclick="ModelVisualizer()">ModelVisualizer</button>
+                            <iframe id="ModelVisualizer" style="width:400px;height:300px;display:none;"></iframe>
+                        </li>
+                    </ul>
+                
+                </div>
+                
+            </div>    
+            
+        </div>
+
+        <h2>Your Visualization</h2>
+        <!-- Container for the image -->
+        <div id="decision-tree-image-container"></div>
+        <!-- Image below will be dynamically updated -->
+        <img src="output.png" alt="Image Description" id="footer-image">
+    </div>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
+
+<body>
+
+<header>
+    
+</header>
+
+<div class="container">
+    <div class="column column1" id="resourcesColumn">
+        <h2>Explaination</h2>
+        <!-- Resources content will be loaded here -->
+    </div>
+
+        
+       
+    
+    <div class="column column2" id="modelsColumn">
+        <h2>Visualise your Model</h2>
+        <div class="container">
+            <div class="column21" id="withDataset">
+                <h3>With Dataset</h3>
+                <section id="Upload Your Dataset">
+                    <h2>Upload Your Dataset</h2>
+                    <div id="drop-area">
+                        <input type="file" id="fileElem" multiple accept=".csv,.txt,.arff">
+                        <label for="fileElem">Upload Files</label>
+                        <span class="file-types">(CSV, TXT, ARFF)</span>
+                        <p id="file-name">No file uploaded</p> <!-- Display uploaded file name -->
+                        <p>Drag &amp; Drop files here or click to upload</p>
+                    </div>
+                    
+                </section>
+                <div id="visualizationWithDataset">
+                    <ul id="models">
+                        <li><button onclick="linearRegression()">Linear Regression</button></li>
+                        <li><button onclick="knn()">KNN</button></li>
+                        <li><button onclick="decisionTree()">Decision Tree</button></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="column22" id="withoutDataset">
+                <h3>Without Dataset</h3>
+                <div id="visualizationWithoutDataset">
+                    <ul id="models">
+                        <li><button onclick="linearRegressionServe()">Linear Regression</button></li>
+                        <li><button onclick="decisionTreeServe()">Decision Tree</button></li>
+                        <li><button onclick="knnServe()">KNN</button></li>
+                        <li><button onclick="svmServe()">SVM</button></li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    
+        <h2>Your Visualization</h2>
+        <!-- Container for the image -->
+        <div id="decision-tree-image-container"></div>
+        
+        <img src="output.png" alt="Image Description" id="footer-image">
+
+
+    </div>
+
+<script src="index.js"></script>
+
+
+
+</body>
+</html>
